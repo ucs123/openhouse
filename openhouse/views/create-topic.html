@@ -1,0 +1,27 @@
+<div class="create-topic">
+	<header>
+		<h1>Create a Topic</h1>
+		<span class="glyphicon glyphicon-remove-sign" ng-click="close();"></span>
+	</header>
+	<form role="form" ng-submit="addNewTopic();" enctype="multipart/form-data">
+		<div class="alert alert-danger" role="alert" ng-show="topic.status === 'error'">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	    	<span class="sr-only">Error:</span>
+	    	Sorry, please try again.
+		</div>
+
+	<fieldset>
+	  <div class="form-group">
+	  	<label for="topicName">Topic</label>
+	    <input id="topicName" class="form-control" placeholder="Add Topic Key words" name="topicName" type="text" autofocus="true" ng-model="topic.name" required="required">
+	  </div>
+	  <div class="form-group">
+	  	<label for="description">Description</label>
+	  	<textarea name="topicDescription" class="form-control" id="topicDescription" ng-model="topic.description" required="required" placeholder="Put a brief and clear description"></textarea>
+	  </div>
+	  <p>Don’t worry we wont be sharing your details</p>
+	  <input type="submit" class="btn btn-primary" value="Add Topic" />
+	</fieldset>
+
+	</form>
+</div>

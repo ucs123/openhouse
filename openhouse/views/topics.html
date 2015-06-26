@@ -1,0 +1,32 @@
+<div class="row listing-page-header">
+  <div class="col-md-11">
+    <h1>Stand Topics for 30th May</h1>
+  </div>
+  <div class="col-md-1">
+  	<button type="button" class="btn btn-primary navbar-btn" ng-click="createTopic();">CREATE</button>
+  </div>
+</div>
+<div class="list-topics">
+
+	<ul class="media-list" ng-show="topicList.length">
+	  <li class="media" ng-repeat="topic in topicList">
+	    <div class="media-left">
+	      <a href="javascript:void(0);" class="star" ng-class="{'can-vote' : topic.canVote}" ng-click="vote(topic.id, topic.oracleId); $event.preventDefault()">
+	        <span class="glyphicon" ng-class="{'glyphicon-star' : topic.selfLiked, 'glyphicon-star-empty' : !topic.selfLiked}"></span>
+	      </a>
+	      <h4 ng-bind="topic.totalLikes"></h4>
+	      <span class="votes">Vote(s)</span>
+	    </div>
+	    <div class="media-body">
+	      <h3 class="media-heading" ng-bind="topic.name"></h3>
+	      <p class="media-description" ng-bind="topic.description"></p>
+	      <p ng-bind="topic.dateAdded"></p>
+	      <button type="button" ng-show="topic.showDelete" class="btn btn-xs btn-danger delete" ng-click="deleteTopic(topic.id);">DELETE</button>
+	    </div>
+	  </li>
+	</ul>
+
+	<p ng-hide="topicList.length" class="no-topics-found">There is something that makes us a boundary-less organization. We are proud of each one of you for making our learning culture such an enriching one. We want to bring about a transformation of attitudes to encourage feelings of ownership and self-worth in you. Help us articulate this vision of an open &amp; diverse organization. Let us together unleash the power of ‘openness and relationships’ as a core value. Each one of you makes a difference.
+</p>
+
+</div>
